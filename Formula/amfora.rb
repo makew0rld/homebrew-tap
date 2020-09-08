@@ -21,7 +21,7 @@ class Amfora < Formula
     ENV["PATH"] = "#{ENV["PATH"]}:#{buildpath}/bin"
     (buildpath/"src/github.com/makeworld-the-better-one/amfora").install buildpath.children
     cd "src/github.com/makeworld-the-better-one/amfora" do
-        system "go", "build", "-o" bin/"amfora", "-ldflags='-s -w -X main.version=1.5.0 -X main.commit=922e7981a92cb7bf0d7b3baf1694d0fffe90d448 -X main.builtBy=official-brew-tap'", "."
+        system "go", "build", "-o", bin/"amfora", "-ldflags='-s -w -X main.version=1.5.0 -X main.commit=922e7981a92cb7bf0d7b3baf1694d0fffe90d448 -X main.builtBy=official-brew-tap'", "."
     end
   end
 
