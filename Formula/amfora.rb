@@ -27,6 +27,9 @@ class Amfora < Formula
         ENV["VERSION"] = "v1.5.0"
         ENV["COMMIT"] = "922e7981a92cb7bf0d7b3baf1694d0fffe90d448"
     end
+    if build.head?
+        system "git", "pull", "--tags"
+    end
     
     ENV["GO111MODULE"] = "on"
     ENV["BUILDER"] = "official-brew-tap"
