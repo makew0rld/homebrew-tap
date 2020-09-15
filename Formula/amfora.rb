@@ -12,8 +12,10 @@ class Amfora < Formula
 
   def install
     ENV["GO111MODULE"] = "on"
-    system "PREFIX=.", "BUILDER=official-brew-tap", "make"
-    bin.install bin/amfora
+    ENV["PREFIX"] = "."
+    ENV["BUILDER"] = "official-brew-tap"
+    system "make"
+    bin.install "bin/amfora"
   end
 
   test do
