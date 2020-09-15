@@ -24,11 +24,11 @@ class Amfora < Formula
     if not build.head?
         # Install actual Makefile, not included in v1.5.0 source
     	system "curl", "-sSL", "https://github.com/makeworld-the-better-one/amfora/raw/b2b8e30/Makefile", "-o", "Makefile"
+        ENV["VERSION"] = "v1.5.0"
+        ENV["COMMIT"] = "922e7981a92cb7bf0d7b3baf1694d0fffe90d448"
     end
     
     ENV["GO111MODULE"] = "on"
-    ENV["VERSION"] = "v1.5.0"
-    ENV["COMMIT"] = "922e7981a92cb7bf0d7b3baf1694d0fffe90d448"
     ENV["BUILDER"] = "official-brew-tap"
     system "gmake"
     bin.install "amfora"
