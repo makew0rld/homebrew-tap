@@ -3,8 +3,8 @@
 class Amfora < Formula
   desc "A fancy terminal browser for the Gemini protocol."
   homepage "https://github.com/makeworld-the-better-one/amfora"
-  url "https://github.com/makeworld-the-better-one/amfora.git"
-  sha256 "c8478b00155ad74712b957444b7afe025a74030907b77cca0903b6477f79843d"
+  url "https://github.com/makeworld-the-better-one/amfora/archive/b2b8e30.tar.gz"
+  sha256 "d14ef4e5f13f92a209a1d2f9f9a5ccb443d8d27e06fbfa7ea880658cffe015e7"
   license "GPL-3.0"
   version "1.5.0"
 
@@ -12,7 +12,6 @@ class Amfora < Formula
 
   def install
     ENV["GO111MODULE"] = "on"
-    git checkout b2b8e30
     system "PREFIX=.", "BUILDER=official-brew-tap", "make"
     bin.install bin/amfora
   end
