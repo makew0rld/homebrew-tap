@@ -29,6 +29,6 @@ class Amfora < Formula
   end
 
   test do
-    system "#{bin}/amfora", "-v"
+    assert_equal shell_output("#{bin}/amfora -v").chomp, "Amfora v#{version}"
   end
 end
