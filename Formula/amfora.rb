@@ -14,7 +14,7 @@ class Amfora < Formula
 
   depends_on "go" => :build
   depends_on "curl" => :build
-  depends_on :xcode => :build
+  depends_on "make" => :build
 
   def install
     # Install new Makefile
@@ -23,7 +23,7 @@ class Amfora < Formula
     ENV["VERSION"] = "v1.5.0"
     ENV["COMMIT"] = "922e7981a92cb7bf0d7b3baf1694d0fffe90d448"
     ENV["BUILDER"] = "official-brew-tap"
-    system "make"
+    system "gmake"
     bin.install "amfora"
   end
 
