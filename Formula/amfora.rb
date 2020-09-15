@@ -28,7 +28,7 @@ class Amfora < Formula
         ENV["COMMIT"] = "922e7981a92cb7bf0d7b3baf1694d0fffe90d448"
     end
     if build.head?
-        system "git", "pull", "--tags"
+        system "git", "fetch", "--unshallow"
     end
     
     ENV["GO111MODULE"] = "on"
