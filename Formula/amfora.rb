@@ -15,7 +15,7 @@ class Amfora < Formula
     ENV["PREFIX"] = "."
     ENV["BUILDER"] = "official-brew-tap"
     system "make"
-    bin.install "bin/amfora"
+    bin.install "amfora"
   end
 
   test do
