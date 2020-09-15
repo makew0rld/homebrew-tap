@@ -13,8 +13,8 @@ class Amfora < Formula
   end
 
   depends_on "go" => :build
-  depends_on ":curl" => :build
-  depends_on ":make" => :build
+  depends_on :curl => :build
+  depends_on :make => :build
 
   def install
     # Install new Makefile
