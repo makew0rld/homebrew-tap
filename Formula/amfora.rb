@@ -8,6 +8,10 @@ class Amfora < Formula
   license "GPL-3.0"
   version "1.5.0"
 
+  head do
+    url 'https://github.com/makeworld-the-better-one/amfora.git'
+  end
+
   depends_on "go" => :build
 
   def install
