@@ -22,6 +22,7 @@ class Amfora < Formula
   
     if build.head?
       system "git", "fetch", "--tags"
+      system "git", "fetch", "--unshallow"
     else
         # Install actual Makefile, not included in v1.5.0 source
     	system "curl", "-sSL", "https://github.com/makeworld-the-better-one/amfora/raw/3cb15cb/Makefile", "-o", "Makefile"
