@@ -40,6 +40,6 @@ class Amfora < Formula
   end
 
   test do
-    assert_match /Amfora v#{version}\nCommit: .*\nBuilt by: official-brew-tap/, shell_output("#{bin}/amfora -v").chomp
+    assert_match /Amfora .*\nCommit: .*\nBuilt by: official-brew-tap/, shell_output("#{bin}/amfora -v").chomp
   end
 end
