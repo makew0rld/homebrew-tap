@@ -11,13 +11,18 @@ class Amfora < Formula
   depends_on "go" => :build
   depends_on "make" => :build
 
+  head do
+    url 'https://github.com/makeworld-the-better-one/amfora.git'
+  end
   def install
 
     def applications
         share / 'applications'
     end
   
-    if not build.head?
+    if build.head?
+      system "git", "fetch", "--tags"
+    else
         # Install actual Makefile, not included in v1.5.0 source
     	system "curl", "-sSL", "https://github.com/makeworld-the-better-one/amfora/raw/b2b8e30/Makefile", "-o", "Makefile"
         ENV["VERSION"] = "v1.5.0"
@@ -26,7 +31,7 @@ class Amfora < Formula
     
     ENV["GO111MODULE"] = "on"
     ENV["BUILDER"] = "official-brew-tap"
-    system "gmake"
+    system "#{HOMEBREW_PREFIX}/bin/gmake"
     bin.install "amfora"
 
     if not OS.mac?
