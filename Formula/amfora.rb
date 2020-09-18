@@ -41,6 +41,6 @@ class Amfora < Formula
   end
 
   test do
-    assert_equal shell_output("#{bin}/amfora -v").chomp, "Amfora v#{version}"
+    assert_match /Amfora v.*\nCommit: .*\nBuilt by: official-brew-tap/, shell_output("#{bin}/amfora -v").chomp
   end
 end
