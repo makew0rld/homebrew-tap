@@ -14,21 +14,28 @@ class Amfora < Formula
   head do
     url 'https://github.com/makeworld-the-better-one/amfora.git'
   end
+
+    # Can be removed in the future
+  resource 'temporary_makefile' do
+    url 'https://github.com/makeworld-the-better-one/amfora/raw/3cb15cb/Makefile'
+    sha256 '98784090b3338edd8fdc00c14b9878d9536c71649289eafde5e99e84dcbf81ff'
+  end
+
   def install
 
     def applications
         share / 'applications'
     end
-  
+
     if build.head?
       system "git", "fetch", "--tags"
     else
-        # Install actual Makefile, not included in v1.5.0 source
-    	system "curl", "-sSL", "https://github.com/makeworld-the-better-one/amfora/raw/3cb15cb/Makefile", "-o", "Makefile"
-        ENV["VERSION"] = "v1.5.0"
-        ENV["COMMIT"] = "922e7981a92cb7bf0d7b3baf1694d0fffe90d448"
+      # Install actual Makefile, not included in v1.5.0 source
+      resource('temporary_makefile').stage(buildpath)
+      ENV["VERSION"] = "v1.5.0"
+      ENV["COMMIT"] = "922e7981a92cb7bf0d7b3baf1694d0fffe90d448"
     end
-    
+
     ENV["GO111MODULE"] = "on"
     ENV["BUILDER"] = "official-brew-tap"
     system "#{HOMEBREW_PREFIX}/bin/gmake"
