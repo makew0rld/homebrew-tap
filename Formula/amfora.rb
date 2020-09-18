@@ -24,7 +24,7 @@ class Amfora < Formula
       system "git", "fetch", "--tags"
     else
         # Install actual Makefile, not included in v1.5.0 source
-    	system "curl", "-sSL", "https://github.com/makeworld-the-better-one/amfora/raw/b2b8e30/Makefile", "-o", "Makefile"
+    	system "curl", "-sSL", "https://github.com/makeworld-the-better-one/amfora/raw/3cb15cb/Makefile", "-o", "Makefile"
         ENV["VERSION"] = "v1.5.0"
         ENV["COMMIT"] = "922e7981a92cb7bf0d7b3baf1694d0fffe90d448"
     end
