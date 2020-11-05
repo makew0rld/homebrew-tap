@@ -3,22 +3,16 @@
 class Amfora < Formula
   desc "A fancy terminal browser for the Gemini protocol."
   homepage "https://github.com/makeworld-the-better-one/amfora"
-  url "https://github.com/makeworld-the-better-one/amfora/archive/v1.5.0.tar.gz"
-  sha256 "c8478b00155ad74712b957444b7afe025a74030907b77cca0903b6477f79843d"
+  url "https://github.com/makeworld-the-better-one/amfora/archive/v1.6.0.tar.gz"
+  sha256 "a02b070679718953a4184ef2b7fbeccfcdf9bf227ca1efab34ee0d7fa21e9bd9"
   license "GPL-3.0"
-  version "1.5.0"
+  version "1.6.0"
 
   depends_on "go" => :build
   depends_on "make" => :build
 
   head do
     url 'https://github.com/makeworld-the-better-one/amfora.git'
-  end
-
-    # Can be removed in the future
-  resource 'temporary_makefile' do
-    url 'https://github.com/makeworld-the-better-one/amfora/raw/3cb15cb/Makefile'
-    sha256 '98784090b3338edd8fdc00c14b9878d9536c71649289eafde5e99e84dcbf81ff'
   end
 
   def install
@@ -31,10 +25,8 @@ class Amfora < Formula
       system "git", "fetch", "--tags"
       system "git", "fetch", "--unshallow"
     else
-      # Install actual Makefile, not included in v1.5.0 source
-      resource('temporary_makefile').stage(buildpath)
-      ENV["VERSION"] = "v1.5.0"
-      ENV["COMMIT"] = "922e7981a92cb7bf0d7b3baf1694d0fffe90d448"
+      ENV["VERSION"] = "v1.6.0"
+      ENV["COMMIT"] = "445be96e467a959aff6dc8aaf75ca8751ce6f2d7"
     end
 
     ENV["GO111MODULE"] = "on"
