@@ -26,7 +26,7 @@ class Amfora < Formula
       system "git", "fetch", "--unshallow"
     else
       ENV["VERSION"] = "v1.8.0"
-      ENV["COMMIT"] = "0025742ff51a864ca91eb2ae3a897f05a5ddbb53"
+      ENV["COMMIT"] = "71385e9f4e91ab982076856cac95320173ccea73"
     end
 
     ENV["GO111MODULE"] = "on"
