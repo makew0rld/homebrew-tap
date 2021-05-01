@@ -12,7 +12,7 @@ class Didder < Formula
   depends_on "make" => :build
 
   head do
-    url 'https://github.com/makeworld-the-better-one/didder.git'
+    url 'https://github.com/makeworld-the-better-one/didder.git', :branch => "main"
   end
 
   def install
