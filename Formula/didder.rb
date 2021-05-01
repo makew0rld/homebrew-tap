@@ -33,6 +33,7 @@ class Didder < Formula
     ENV["BUILDER"] = "official-brew-tap"
     system "#{HOMEBREW_PREFIX}/bin/gmake"
     bin.install "didder"
+    man1.install "didder.1"
 
   end
 
