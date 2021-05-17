@@ -3,10 +3,10 @@
 class Didder < Formula
   desc "An extensive, fast, and accurate command-line image dithering tool."
   homepage "https://github.com/makeworld-the-better-one/didder"
-  url "https://github.com/makeworld-the-better-one/didder/archive/v1.0.0.tar.gz"
-  sha256 "b1329690f0041ac9a84b48527859f8138196ea8bf2d12e36b93ea57475e1671c"
+  url "https://github.com/makeworld-the-better-one/didder/archive/v1.1.0.tar.gz"
+  sha256 "a850ae54125ed2aa1be54b1cc11481c00094d346861bd59014d621dc48f9aed6"
   license "GPL-3.0"
-  version "1.0.0"
+  version "1.1.0"
 
   depends_on "go" => :build
   depends_on "make" => :build
@@ -25,8 +25,8 @@ class Didder < Formula
       system "git", "fetch", "--tags"
       system "git", "fetch", "--unshallow"
     else
-      ENV["VERSION"] = "v1.0.0"
-      ENV["COMMIT"] = "dcc08250d2c06832152d8f9b866285e4249700de"
+      ENV["VERSION"] = "v1.1.0"
+      ENV["COMMIT"] = "9eb5bf257af601be80a7499ce4731476d226b3fc"
     end
 
     ENV["GO111MODULE"] = "on"
