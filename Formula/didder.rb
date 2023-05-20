@@ -2,8 +2,8 @@
 
 class Didder < Formula
   desc "An extensive, fast, and accurate command-line image dithering tool."
-  homepage "https://github.com/makeworld-the-better-one/didder"
-  url "https://github.com/makeworld-the-better-one/didder/archive/v1.1.0.tar.gz"
+  homepage "https://github.com/makew0rld/didder"
+  url "https://github.com/makew0rld/didder/archive/v1.1.0.tar.gz"
   sha256 "a850ae54125ed2aa1be54b1cc11481c00094d346861bd59014d621dc48f9aed6"
   license "GPL-3.0"
   version "1.1.0"
@@ -12,15 +12,14 @@ class Didder < Formula
   depends_on "make" => :build
 
   head do
-    url 'https://github.com/makeworld-the-better-one/didder.git', :branch => "main"
+    url 'https://github.com/makew0rld/didder.git', :branch => "main"
+  end
+
+  def applications
+    share / 'applications'
   end
 
   def install
-
-    def applications
-        share / 'applications'
-    end
-
     if build.head?
       system "git", "fetch", "--tags"
       system "git", "fetch", "--unshallow"
